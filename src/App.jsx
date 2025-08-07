@@ -1,160 +1,299 @@
 function App() {
   return (
-    <div className="min-h-screen bg-base-100">
-      <div className="navbar bg-base-100 shadow-lg">
-        <div className="flex-1">
-          <a className="btn btn-ghost text-xl">ShopHub</a>
+    <div className="min-h-screen">
+      {/* DaisyUI Navbar */}
+      <div className="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16"></path>
+              </svg>
+            </div>
+            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <li><a>New & Featured</a></li>
+              <li><a>Men</a></li>
+              <li><a>Women</a></li>
+              <li><a>Kids</a></li>
+              <li><a>Sale</a></li>
+            </ul>
+          </div>
+          <a className="btn btn-ghost text-xl font-bold">🏀 HOOPS</a>
         </div>
-        <div className="flex-none">
+        
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
+            <li><a className="btn btn-ghost">New & Featured</a></li>
+            <li><a className="btn btn-ghost">Men</a></li>
+            <li><a className="btn btn-ghost">Women</a></li>
+            <li><a className="btn btn-ghost">Kids</a></li>
+            <li><a className="btn btn-ghost">Sale</a></li>
+          </ul>
+        </div>
+        
+        <div className="navbar-end">
+          <div className="form-control hidden lg:flex">
+            <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+          </div>
+          
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
               <div className="indicator">
-                <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z"/>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+              <div className="indicator">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                 </svg>
                 <span className="badge badge-sm indicator-item">3</span>
               </div>
             </div>
           </div>
-          <div className="navbar-end">
-            <a className="btn btn-primary">Sign In</a>
+          
+          <a className="btn btn-primary">Sign In</a>
+        </div>
+      </div>
+
+      {/* DaisyUI Hero */}
+      <div className="hero min-h-screen bg-gradient-to-br from-primary to-secondary">
+        <div className="hero-content text-center">
+          <div className="max-w-4xl">
+            <h1 className="mb-5 text-5xl lg:text-7xl font-bold text-primary-content">
+              DOMINATE THE<br />
+              <span className="text-accent">COURT</span>
+            </h1>
+            <p className="mb-5 text-xl text-primary-content/90 max-w-2xl mx-auto">
+              Elevate your game with the latest basketball shoes designed for performance and style.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="btn btn-accent btn-lg">Shop Basketball</button>
+              <button className="btn btn-outline btn-lg">View Collection</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="hero min-h-screen bg-gradient-to-r from-primary to-secondary">
-        <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Shop Amazing Products</h1>
-            <p className="mb-5">Discover the best deals on electronics, fashion, and more. Free shipping on orders over $50!</p>
-            <button className="btn btn-accent btn-lg">Shop Now</button>
-          </div>
-        </div>
-      </div>
-
-      <div className="py-16 px-8">
+      {/* Categories Section with DaisyUI Cards */}
+      <div className="py-16 px-8 bg-base-100">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Featured Categories</h2>
-          <p className="text-lg text-base-content/70">Explore our top product categories</p>
+          <h2 className="text-4xl font-bold mb-4">Shop by Category</h2>
+          <p className="text-xl text-base-content/70">Find your perfect basketball shoe</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="card bg-base-100 shadow-xl">
-            <div className="card-body items-center text-center">
-              <div className="avatar">
-                <div className="w-20 rounded-xl bg-primary/20 flex items-center justify-center">
-                  <svg className="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
-                  </svg>
-                </div>
-              </div>
-              <h3 className="card-title">Electronics</h3>
-              <p>Latest gadgets and tech accessories</p>
-              <div className="card-actions">
-                <button className="btn btn-primary">Browse</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="card bg-base-100 shadow-xl">
-            <div className="card-body items-center text-center">
-              <div className="avatar">
-                <div className="w-20 rounded-xl bg-secondary/20 flex items-center justify-center">
-                  <svg className="w-10 h-10 text-secondary" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                </div>
-              </div>
-              <h3 className="card-title">Fashion</h3>
-              <p>Trendy clothing and accessories</p>
-              <div className="card-actions">
-                <button className="btn btn-secondary">Browse</button>
+          {/* Men's Basketball Card */}
+          <div className="card bg-gradient-to-br from-primary to-secondary shadow-xl hover:shadow-2xl transition-shadow image-full">
+            <figure className="h-80">
+              <img
+                src="https://images.pexels.com/photos/2385477/pexels-photo-2385477.jpeg"
+                alt="White and red basketball sneakers with an orange basketball"
+                className="w-full h-full object-cover"
+              />
+            </figure>
+            <div className="card-body justify-end">
+              <h2 className="card-title text-white text-2xl">Men's Basketball</h2>
+              <p className="text-white/90">Performance meets style</p>
+              <div className="card-actions justify-start">
+                <button className="btn btn-accent">Shop Now</button>
               </div>
             </div>
           </div>
 
-          <div className="card bg-base-100 shadow-xl">
-            <div className="card-body items-center text-center">
-              <div className="avatar">
-                <div className="w-20 rounded-xl bg-accent/20 flex items-center justify-center">
-                  <svg className="w-10 h-10 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                  </svg>
-                </div>
+          {/* Women's Basketball Card */}
+          <div className="card bg-gradient-to-br from-secondary to-accent shadow-xl hover:shadow-2xl transition-shadow image-full">
+            <figure className="h-80">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg"
+                alt="Pair of modern white sneakers with laces"
+                className="w-full h-full object-cover"
+              />
+            </figure>
+            <div className="card-body justify-end">
+              <h2 className="card-title text-white text-2xl">Women's Basketball</h2>
+              <p className="text-white/90">Designed for athletes</p>
+              <div className="card-actions justify-start">
+                <button className="btn btn-primary">Shop Now</button>
               </div>
-              <h3 className="card-title">Home & Garden</h3>
-              <p>Everything for your living space</p>
-              <div className="card-actions">
-                <button className="btn btn-accent">Browse</button>
+            </div>
+          </div>
+
+          {/* Kids Basketball Card */}
+          <div className="card bg-gradient-to-br from-accent to-info shadow-xl hover:shadow-2xl transition-shadow image-full">
+            <figure className="h-80">
+              <img
+                src="https://images.pexels.com/photos/10853637/pexels-photo-10853637.jpeg"
+                alt="High-cut Nike Air Jordan 1 sneaker with unique multi-color design"
+                className="w-full h-full object-cover"
+              />
+            </figure>
+            <div className="card-body justify-end">
+              <h2 className="card-title text-white text-2xl">Kids Basketball</h2>
+              <p className="text-white/90">Future champions start here</p>
+              <div className="card-actions justify-start">
+                <button className="btn btn-secondary">Shop Now</button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-base-200 py-16 px-8">
+      {/* Featured Products with DaisyUI Cards */}
+      <div className="py-16 px-8 bg-base-200">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Why Choose ShopHub?</h2>
-            <p className="text-lg text-base-content/70">We make online shopping simple and secure</p>
+          <div className="flex justify-between items-center mb-12">
+            <div>
+              <h2 className="text-4xl font-bold mb-2">Featured Basketball</h2>
+              <p className="text-xl text-base-content/70">The hottest drops this season</p>
+            </div>
+            <button className="btn btn-primary hidden md:block">View All</button>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center">
-              <div className="badge badge-primary badge-lg p-4 mb-4">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
-                  <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 000-2h1a1 1 0 011 1v9a1 1 0 01-1 1h-1.05a2.5 2.5 0 01-4.9 0H9a1 1 0 01-1-1v-4a1 1 0 011-1h5z"></path>
-                </svg>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Product 1 */}
+            <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+              <figure className="px-6 pt-6">
+                <img
+                  src="https://images.pexels.com/photos/2385477/pexels-photo-2385477.jpeg"
+                  alt="White and red basketball sneakers"
+                  className="rounded-xl h-48 w-full object-cover"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Nike Air Jordan Retro</h2>
+                <p className="text-base-content/70">Men's Basketball Shoes</p>
+                <div className="badge badge-primary badge-lg font-bold">$220</div>
+                <div className="flex gap-1 mt-2">
+                  <div className="w-4 h-4 bg-neutral rounded-full"></div>
+                  <div className="w-4 h-4 bg-error rounded-full"></div>
+                  <div className="w-4 h-4 bg-primary rounded-full"></div>
+                </div>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-primary btn-sm">Add to Cart</button>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">Fast Delivery</h3>
-              <p className="text-base-content/70">Get your orders delivered within 2-3 business days</p>
             </div>
 
-            <div className="flex flex-col items-center text-center">
-              <div className="badge badge-secondary badge-lg p-4 mb-4">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"></path>
-                </svg>
+            {/* Product 2 */}
+            <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+              <figure className="px-6 pt-6">
+                <img
+                  src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg"
+                  alt="Modern white sneakers with laces"
+                  className="rounded-xl h-48 w-full object-cover"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Nike Air Force Classic</h2>
+                <p className="text-base-content/70">Unisex Basketball Shoes</p>
+                <div className="badge badge-secondary badge-lg font-bold">$200</div>
+                <div className="flex gap-1 mt-2">
+                  <div className="w-4 h-4 bg-secondary rounded-full"></div>
+                  <div className="w-4 h-4 bg-warning rounded-full"></div>
+                  <div className="w-4 h-4 bg-success rounded-full"></div>
+                </div>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-secondary btn-sm">Add to Cart</button>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">Secure Payment</h3>
-              <p className="text-base-content/70">Your payment information is always protected</p>
             </div>
 
-            <div className="flex flex-col items-center text-center">
-              <div className="badge badge-accent badge-lg p-4 mb-4">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"></path>
-                </svg>
+            {/* Product 3 */}
+            <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+              <figure className="px-6 pt-6">
+                <img
+                  src="https://images.pexels.com/photos/10853637/pexels-photo-10853637.jpeg"
+                  alt="High-cut Nike Air Jordan 1 sneaker with multi-color design"
+                  className="rounded-xl h-48 w-full object-cover"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Air Jordan 1 High</h2>
+                <p className="text-base-content/70">Basketball Shoes</p>
+                <div className="badge badge-accent badge-lg font-bold">$170</div>
+                <div className="flex gap-1 mt-2">
+                  <div className="w-4 h-4 bg-warning rounded-full"></div>
+                  <div className="w-4 h-4 bg-neutral rounded-full"></div>
+                  <div className="w-4 h-4 bg-info rounded-full"></div>
+                </div>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-accent btn-sm">Add to Cart</button>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">24/7 Support</h3>
-              <p className="text-base-content/70">Our customer service team is always here to help</p>
+            </div>
+
+            {/* Product 4 */}
+            <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+              <figure className="px-6 pt-6">
+                <img
+                  src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg"
+                  alt="White sneakers fashion style"
+                  className="rounded-xl h-48 w-full object-cover"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Nike Court Legacy</h2>
+                <p className="text-base-content/70">Lifestyle Sneakers</p>
+                <div className="badge badge-info badge-lg font-bold">$130</div>
+                <div className="flex gap-1 mt-2">
+                  <div className="w-4 h-4 bg-info rounded-full"></div>
+                  <div className="w-4 h-4 bg-neutral rounded-full"></div>
+                  <div className="w-4 h-4 bg-base-300 border border-base-content/20 rounded-full"></div>
+                </div>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-info btn-sm">Add to Cart</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Newsletter Section */}
+      <div className="py-16 bg-neutral text-neutral-content">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-4">Stay in the Game</h2>
+          <p className="text-xl mb-8 text-neutral-content/80">Get the latest basketball gear drops and exclusive offers</p>
+          
+          <div className="join max-w-md mx-auto">
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              className="input input-bordered join-item flex-1"
+            />
+            <button className="btn btn-primary join-item">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      {/* DaisyUI Footer */}
       <footer className="footer footer-center p-10 bg-primary text-primary-content">
         <aside>
-          <p className="font-bold text-lg">ShopHub</p>
-          <p>Your trusted online marketplace since 2024</p>
+          <div className="text-3xl font-bold mb-4">🏀 HOOPS</div>
+          <p className="font-bold">Your ultimate destination for basketball shoes and gear</p>
           <p>Copyright © 2024 - All rights reserved</p>
         </aside>
         <nav>
           <div className="grid grid-flow-col gap-4">
-            <a className="btn btn-ghost btn-circle">
+            <a className="btn btn-ghost btn-circle" aria-label="Twitter">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
               </svg>
             </a>
-            <a className="btn btn-ghost btn-circle">
+            <a className="btn btn-ghost btn-circle" aria-label="Instagram">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
-            <a className="btn btn-ghost btn-circle">
+            <a className="btn btn-ghost btn-circle" aria-label="Discord">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76h-.03c-1.22 0-2-.83-2-1.87 0-1.06.8-1.87 2.05-1.87 1.24 0 2 .8 2.02 1.87 0 1.04-.78 1.87-2.05 1.87zM20.34 20.1h-3.63v-5.8c0-1.45-.52-2.45-1.83-2.45-1 0-1.6.67-1.87 1.32-.1.23-.11.55-.11.88v6.05H9.28s.05-9.82 0-10.84h3.63v1.54a3.6 3.6 0 0 1 3.26-1.8c2.39 0 4.18 1.56 4.18 4.89v6.21z"/>
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.010c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.174.372.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
               </svg>
             </a>
           </div>
