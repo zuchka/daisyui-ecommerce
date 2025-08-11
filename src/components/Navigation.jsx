@@ -16,6 +16,7 @@ function Navigation({ theme, setTheme, themes }) {
             <li><a>Women</a></li>
             <li><a>Kids</a></li>
             <li><a>Sale</a></li>
+            <li><Link to="/admin">Admin</Link></li>
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost text-xl font-bold">🏀 HOOPS</Link>
@@ -28,6 +29,7 @@ function Navigation({ theme, setTheme, themes }) {
           <li><a className="btn btn-ghost">Women</a></li>
           <li><a className="btn btn-ghost">Kids</a></li>
           <li><a className="btn btn-ghost">Sale</a></li>
+          <li><Link to="/admin" className="btn btn-ghost">Admin</Link></li>
         </ul>
       </div>
       

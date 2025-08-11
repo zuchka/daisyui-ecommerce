@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
 import MenPage from './components/MenPage'
+import AdminPage from './components/AdminPage'
 import Navigation from './components/Navigation'
 
 function HomePage({ theme, setTheme, themes }) {
@@ -268,6 +269,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage theme={theme} setTheme={setTheme} themes={themes} />} />
         <Route path="/men" element={<MenPage theme={theme} setTheme={setTheme} themes={themes} />} />
+        <Route path="/admin" element={<AdminPage theme={theme} setTheme={setTheme} themes={themes} />} />
       </Routes>
     </Router>
   )
