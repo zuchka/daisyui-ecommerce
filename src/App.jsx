@@ -11,7 +11,7 @@ function HomePage({ theme, setTheme, themes }) {
       <Navigation theme={theme} setTheme={setTheme} themes={themes} />
 
       {/* DaisyUI Hero */}
-      <div className="hero min-h-screen bg-gradient-to-br from-primary to-secondary">
+      <div className="hero h-96 bg-gradient-to-br from-primary to-secondary">
         <div className="hero-content text-center">
           <div className="max-w-4xl">
             <h1 className="mb-5 text-5xl lg:text-7xl font-bold text-primary-content">
@@ -253,16 +253,19 @@ function HomePage({ theme, setTheme, themes }) {
 }
 
 function App() {
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'light'
-  })
+  const [theme, setTheme] = useState('cupcake')
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('theme', theme)
   }, [theme])
 
-  const themes = ['light', 'dark', 'cupcake']
+  const themes = [
+    'cupcake', 'light', 'dark', 'aqua', 'autumn', 'business', 'acid', 'lemonade', 
+    'night', 'coffee', 'winter', 'dim', 'nord', 'sunset', 'procyon', 'cyberpunk', 
+    'valentine', 'halloween', 'garden', 'forest', 'lofi', 'pastel', 'fantasy', 
+    'wireframe', 'black', 'luxury', 'dracula', 'cmyk', 'emerald', 'corporate', 
+    'synthwave', 'retro', 'bumblebee'
+  ]
 
   return (
     <Router>

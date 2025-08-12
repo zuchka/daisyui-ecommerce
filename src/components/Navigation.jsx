@@ -40,16 +40,16 @@ function Navigation({ theme, setTheme, themes }) {
 
         {/* Theme Switcher */}
         <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle pr-1.5">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
             </svg>
           </div>
-          <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-32 p-2 shadow">
+          <ul tabIndex={0} className="dropdown-content bg-base-100 rounded-box z-[1] w-48 p-2 shadow max-h-80 overflow-y-auto">
             {themes.map((themeName) => (
               <li key={themeName}>
                 <button
-                  className={`capitalize ${theme === themeName ? 'active' : ''}`}
+                  className={`w-full text-left px-3 py-2 hover:bg-base-200 rounded-md capitalize ${theme === themeName ? 'bg-primary text-primary-content' : ''}`}
                   onClick={() => setTheme(themeName)}
                 >
                   {themeName}
