@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import MenPage from './components/MenPage'
 import AdminPage from './components/AdminPage'
 import Navigation from './components/Navigation'
+import ProductCarousel from './components/ProductCarousel'
 
 function HomePage({ theme, setTheme, themes }) {
 
@@ -28,6 +29,9 @@ function HomePage({ theme, setTheme, themes }) {
           </div>
         </div>
       </div>
+
+      {/* Product Carousel */}
+      <ProductCarousel />
 
       {/* Categories Section with DaisyUI Cards */}
       <div className="py-16 px-8 bg-base-100">
