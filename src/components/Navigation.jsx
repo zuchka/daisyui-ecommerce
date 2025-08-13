@@ -13,9 +13,9 @@ function Navigation({ theme, setTheme, themes }) {
           <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
             <li><Link to="/">New & Featured</Link></li>
             <li><Link to="/men">Men</Link></li>
-            <li><a>Women</a></li>
-            <li><a>Kids</a></li>
-            <li><a>Sale</a></li>
+            <li><a href="#" className="cursor-pointer">Women</a></li>
+            <li><a href="#" className="cursor-pointer">Kids</a></li>
+            <li><a href="#" className="cursor-pointer">Sale</a></li>
             <li><Link to="/admin">Admin</Link></li>
           </ul>
         </div>
@@ -26,9 +26,9 @@ function Navigation({ theme, setTheme, themes }) {
         <ul className="menu menu-horizontal px-1">
           <li><Link to="/" className="btn btn-ghost">New & Featured</Link></li>
           <li><Link to="/men" className="btn btn-ghost">Men</Link></li>
-          <li><a className="btn btn-ghost">Women</a></li>
-          <li><a className="btn btn-ghost">Kids</a></li>
-          <li><a className="btn btn-ghost">Sale</a></li>
+          <li><a href="#" className="btn btn-ghost cursor-pointer">Women</a></li>
+          <li><a href="#" className="btn btn-ghost cursor-pointer">Kids</a></li>
+          <li><a href="#" className="btn btn-ghost cursor-pointer">Sale</a></li>
           <li><Link to="/admin" className="btn btn-ghost">Admin</Link></li>
         </ul>
       </div>
@@ -80,7 +80,7 @@ function Navigation({ theme, setTheme, themes }) {
           </div>
         </div>
 
-        <a className="btn btn-primary">Sign In</a>
+        <a href="#" className="btn btn-primary cursor-pointer">Sign In</a>
       </div>
     </div>
   )

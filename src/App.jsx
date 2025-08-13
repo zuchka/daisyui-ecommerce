@@ -264,11 +264,11 @@ function App() {
   }, [theme])
 
   const themes = [
-    'cupcake', 'light', 'dark', 'aqua', 'autumn', 'business', 'acid', 'lemonade', 
-    'night', 'coffee', 'winter', 'dim', 'nord', 'sunset', 'procyon', 'cyberpunk', 
-    'valentine', 'halloween', 'garden', 'forest', 'lofi', 'pastel', 'fantasy', 
-    'wireframe', 'black', 'luxury', 'dracula', 'cmyk', 'emerald', 'corporate', 
-    'synthwave', 'retro', 'bumblebee'
+    'light', 'dark', 'acid', 'aqua', 'autumn', 'black', 'bumblebee', 'business',
+    'cmyk', 'coffee', 'corporate', 'cupcake', 'cyberpunk', 'dim', 'dracula',
+    'emerald', 'fantasy', 'forest', 'garden', 'halloween', 'lemonade', 'lofi',
+    'luxury', 'night', 'nord', 'pastel', 'procyon', 'retro', 'sunset',
+    'synthwave', 'valentine', 'winter', 'wireframe'
   ]
 
   return (
